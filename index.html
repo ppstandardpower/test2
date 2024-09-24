@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Mapa_testowa</title>
+    <!-- Importowanie stylów Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        /* Ustawienie rozmiaru mapy */
+        #map {
+            height: 500px; /* Wysokość mapy */
+            width: 100%; /* Szerokość mapy */
+        }
+    </style>
+</head>
+<body>
+    <h1>Mapa testowa do udostępniania plików QGIS</h1>
+    <p>Na stronie zobaczysz przykładową mapę wygenerowaną za pomocą programu QGIS</p>
+    
+    <!-- Element div, w którym będzie wyświetlana mapa -->
+    <div id="map"></div>
+
+    <!-- Importowanie skryptu Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Inicjalizacja mapy
+        var map = L.map('map').setView([51.505, -0.09], 13); // Ustawienie widoku na określoną lokalizację [szerokość, długość] oraz zoom
+
+        // Dodanie warstwy mapy OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+    </script>
+</body>
+</html>
